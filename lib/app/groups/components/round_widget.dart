@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:copa2022/app/groups/round_model.dart';
 import 'package:flutter/material.dart';
 
@@ -67,8 +68,8 @@ class RoundWidget extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              Image.network(
-                                match.home.bandeira!,
+                              CachedNetworkImage(
+                                imageUrl: match.home.bandeira!,
                                 fit: BoxFit.fill,
                                 width: 40,
                                 height: 30,
@@ -104,8 +105,8 @@ class RoundWidget extends StatelessWidget {
                                 )),
                               ),
                               const Spacer(),
-                              Image.network(
-                                match.away.bandeira!,
+                              CachedNetworkImage(
+                                imageUrl: match.away.bandeira!,
                                 fit: BoxFit.fill,
                                 width: 40,
                                 height: 30,

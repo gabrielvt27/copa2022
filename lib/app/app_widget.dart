@@ -12,6 +12,7 @@ class AppWidget extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: const Color(0xFF8A1437),
+        primaryColorDark: const Color.fromARGB(255, 82, 12, 33),
         scaffoldBackgroundColor: const Color(0xFFEEEEE3),
         textTheme: GoogleFonts.openSansTextTheme(),
       ),

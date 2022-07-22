@@ -37,7 +37,7 @@ class _GroupPageState extends State<GroupPage> {
         ),
         onState: (context, groups) {
           return Padding(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.only(top: 20, right: 20, left: 20),
             child: ListView.builder(
               itemCount: groups.length,
               itemBuilder: (context, index) => Column(

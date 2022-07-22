@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:copa2022/app/countries/country_model.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +13,6 @@ class CountryTileWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.all(8),
       decoration: const BoxDecoration(
         color: Color(0xFF8A1437),
         borderRadius: BorderRadius.all(Radius.circular(4)),
@@ -36,8 +36,8 @@ class CountryTileWidget extends StatelessWidget {
                   BoxShadow(offset: Offset(2, 2)),
                 ],
               ),
-              child: Image.network(
-                country.bandeira!,
+              child: CachedNetworkImage(
+                imageUrl: country.bandeira!,
                 fit: BoxFit.fill,
               ),
             ),
@@ -47,9 +47,15 @@ class CountryTileWidget extends StatelessWidget {
               style: const TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.w600,
+                fontSize: 18,
               ),
             ),
             const Spacer(),
+            Icon(
+              Icons.star_border_rounded,
+              color: Theme.of(context).primaryColorDark,
+              size: 30,
+            ),
           ],
         ),
       ),

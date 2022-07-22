@@ -39,6 +39,7 @@ dependencies:
   dartz:
   flutter_modular:
   google_fonts:
+  cached_network_image:
 
 dev_dependencies:
   flutter_test:

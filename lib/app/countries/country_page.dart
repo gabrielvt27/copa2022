@@ -30,7 +30,7 @@ class _CountryPageState extends State<CountryPage> {
           mainAxisSize: MainAxisSize.max,
           children: [
             Padding(
-              padding: const EdgeInsets.all(8),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: TextField(
                 onChanged: _countryStore.filterCountries,
                 decoration: const InputDecoration(
@@ -48,14 +48,14 @@ class _CountryPageState extends State<CountryPage> {
                 ),
               ),
               onState: (context, countries) => Expanded(
-                child: GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    mainAxisExtent: 70,
-                  ),
+                child: ListView.separated(
+                  padding: const EdgeInsets.all(20),
                   itemCount: countries.length,
                   itemBuilder: (context, index) =>
                       CountryTileWidget(country: countries[index]),
+                  separatorBuilder: (context, index) => const SizedBox(
+                    height: 8,
+                  ),
                 ),
               ),
             ),
